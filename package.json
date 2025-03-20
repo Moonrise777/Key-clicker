@@ -1,0 +1,67 @@
+{
+  "name": "key-clicker",
+  "displayName": "Key-Clicker",
+  "description": "Reproduce sonidos cuando escribes en VSCode.",
+  "version": "1.0.0",
+  "icon": "/assets/images/icon.png",
+  "publisher": "ArelyZuleika",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onDidChangeTextDocument"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "keyboard-sounds.enable",
+        "title": "Keyboard-sounds: Habilitar extension"
+      },
+      {
+        "command": "keyboard-sounds.disable",
+        "title": "Keyboard-sounds: Deshabilitar extension"
+      },
+      {
+        "command": "keyboard-sounds.changePack",
+        "title": "Keyboard-sounds: Cambiar paquete de sonido"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "keyboard-sounds.enable",
+        "key": "ctrl+shift+e",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "keyboard-sounds.disable",
+        "key": "ctrl+shift+d",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "vsce package",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.21.0"
+  },
+  "dependencies": {
+    "howler": "^2.2.4",
+    "mplayer": "^2.1.0",
+    "node-web-audio-api": "^1.0.3",
+    "path": "^0.12.7"
+  }
+}
