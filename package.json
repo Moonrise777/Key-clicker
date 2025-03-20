@@ -8,6 +8,9 @@
   "engines": {
     "vscode": "^1.98.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Moonrise777/Key-clicker"},
   "categories": [
     "Other"
   ],
