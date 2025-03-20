@@ -74,14 +74,17 @@ function activate(context) {
         if (changes.length === 0) return;
         const text = changes[0].text;
 
-        if (/^[a-zA-Z]$/.test(text)) { // Letras
-            playSound(getRandomGenericSound());
-        } else if (text === ' ') { // Espacio
-            playSound(getSoundPath('press/SPACE.mp3'));
-        } else if (text === '\n') { // Enter
-            playSound(getSoundPath('press/ENTER.mp3'));
-        } else if (text === '') { // Backspace (cuando se borra texto)
-            playSound(getSoundPath('press/BACKSPACE.mp3'));
+        // Verifica que no este vacío el texto
+        if (text.trim() !== "") {
+            if (/^[a-zA-Z]$/.test(text)) { // Letras
+                playSound(getRandomGenericSound());
+            } else if (text === ' ') { // Espacio
+                playSound(getSoundPath('press/SPACE.mp3'));
+            } else if (text === '\n') { // Enter
+                playSound(getSoundPath('press/ENTER.mp3'));
+            } else if (text === '') { // Backspace (cuando se borra texto)
+                playSound(getSoundPath('press/BACKSPACE.mp3'));
+            }
         }
     });
 
