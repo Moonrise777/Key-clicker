@@ -74,7 +74,7 @@ function activate(context) {
         if (changes.length === 0) return;
         const text = changes[0].text;
 
-        
+        // Cambiado a Switch
         switch (true) {
             case /^[a-zA-Z]$/.test(text):
                 playSound(getRandomGenericSound());
