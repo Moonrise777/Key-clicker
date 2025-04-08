@@ -89,20 +89,20 @@ function activate(context) {
     });
 
     // Teclas soltadas
-    vscode.window.onDidChangeTextEditorSelection(() => {
-        if (!soundEnabled) return;
+    // vscode.window.onDidChangeTextEditorSelection(() => {
+    //     if (!soundEnabled) return;
 
-        // Aquí no podemos capturar la tecla exacta, pero podemos reproducir sonidos al soltar
-        const editor = vscode.window.activeTextEditor;
-        if (!editor) return;
-        const cursorPos = editor.selection.active;
+    //     // Aquí no podemos capturar la tecla exacta, pero podemos reproducir sonidos al soltar
+    //     const editor = vscode.window.activeTextEditor;
+    //     if (!editor) return;
+    //     const cursorPos = editor.selection.active;
 
-        if (cursorPos.character === 0) { // Backspace
-            playSound(getSoundPath('release/BACKSPACE.mp3'));
-        } else {
-            playSound(getSoundPath('release/GENERIC.mp3')); // Sonido genérico al soltar teclas
-        }
-    });
+    //     if (cursorPos.character === 0) { // Backspace
+    //         playSound(getSoundPath('release/BACKSPACE.mp3'));
+    //     } else {
+    //         playSound(getSoundPath('release/GENERIC.mp3')); // Sonido genérico al soltar teclas
+    //     }
+    // });
 }
 
 /** Desactiva la extensión **/
