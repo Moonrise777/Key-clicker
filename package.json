@@ -2,7 +2,7 @@
   "name": "key-clicker",
   "displayName": "Key-Clicker",
   "description": "Reproduce sonidos cuando escribes en VSCode.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "icon": "/assets/images/icon.png",
   "publisher": "ArelyZuleika",
   "engines": {
@@ -66,5 +66,6 @@
     "mplayer": "^2.1.0",
     "node-web-audio-api": "^1.0.3",
     "path": "^0.12.7"
-  }
+  },
+  "license": "LICENSE.txt"
 }
