@@ -74,35 +74,40 @@ function activate(context) {
         if (changes.length === 0) return;
         const text = changes[0].text;
 
-        // Verifica que no este vacío el texto
-        if (text.trim() !== "") {
-            if (/^[a-zA-Z]$/.test(text)) { // Letras
+        
+        switch (true) {
+            case /^[a-zA-Z]$/.test(text):
                 playSound(getRandomGenericSound());
-            } else if (text === ' ') { // Espacio
+                break;
+        
+            case text === ' ':
                 playSound(getSoundPath('press/SPACE.mp3'));
-            } else if (text === '\n') { // Enter
+                break;
+        
+            case text === '\n':
+            case text === '\r':
+            case text === '\r\n':
                 playSound(getSoundPath('press/ENTER.mp3'));
-            } else if (text === '') { // Backspace (cuando se borra texto)
+                break;
+        
+            case text === '':
                 playSound(getSoundPath('press/BACKSPACE.mp3'));
-            }
+                break;
+        
+            case text === '\t':
+                playSound(getSoundPath('release/GENERIC.mp3'));
+                break;
+        
+            default:
+                playSound(getRandomGenericSound()); // Letras con acento, números, símbolos, etc.
+                break;
         }
+        
+        
+    
     });
 
-    // Teclas soltadas
-    // vscode.window.onDidChangeTextEditorSelection(() => {
-    //     if (!soundEnabled) return;
 
-    //     // Aquí no podemos capturar la tecla exacta, pero podemos reproducir sonidos al soltar
-    //     const editor = vscode.window.activeTextEditor;
-    //     if (!editor) return;
-    //     const cursorPos = editor.selection.active;
-
-    //     if (cursorPos.character === 0) { // Backspace
-    //         playSound(getSoundPath('release/BACKSPACE.mp3'));
-    //     } else {
-    //         playSound(getSoundPath('release/GENERIC.mp3')); // Sonido genérico al soltar teclas
-    //     }
-    // });
 }
 
 /** Desactiva la extensión **/
