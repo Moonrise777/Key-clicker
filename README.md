@@ -6,10 +6,9 @@ Escucha sonidos de teclado mientras escribes.
 
 ![Teclado](https://www.pikpng.com/pngl/b/531-5318476_apple-wireless-keyboard-draw-a-computer-keyboard-easy.png)
 
-## Repository
-https://github.com/Moonrise777/Key-clicker
 
 ## References
+Repositorio en Github: https://github.com/Moonrise777/Key-clicker
 Basado en el repositorio de https://github.com/tplai/kbsim
 Además del repositorio de https://github.com/afzal-10-02/Mechanical-Keyboard-Sound
 

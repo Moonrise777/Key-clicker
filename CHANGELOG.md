@@ -8,3 +8,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 20/03/2025
+
+- Version Changes
+08/04/2025
